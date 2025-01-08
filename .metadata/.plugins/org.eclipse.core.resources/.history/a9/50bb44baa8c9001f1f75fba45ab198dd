@@ -1,0 +1,24 @@
+package com.kmove.app.user.vo;
+
+import java.util.Date;
+
+//유저가
+public class UserVo {
+
+	 	private String uidx ;
+		//Chaebun을 활용한 Primary Key
+	 	
+	 	private String uname;
+	 	private String uid;
+	 	private String upw;
+	 	private Date ubirth;
+	 	private String uphone;
+	 	private String upost;
+	 	private String uaddr1;
+	 	private String uaddr2;
+	 	private String umail;
+	 	private String udeleteyn;
+	 	private String uinsertdate;
+	 	private String uupdatedate;
+	 	private String udeletedate;	 
+}

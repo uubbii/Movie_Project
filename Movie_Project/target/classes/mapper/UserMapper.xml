@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.kmove.app.mapper.UserMapper">
+
+    <select id="uvo" resultType="UserVo">
+        SELECT
+            *
+        FROM user;        
+    </select>
+    
+        <select id="maxno" resultType="java.lang.Integer">
+        SELECT
+            IFNULL(MAX(SUBSTR(UIDX, 10, 3)), 0) + 1
+        FROM USER
+        WHERE SUBSTR(UIDX, 2, 8) = DATE_FORMAT(NOW(), '%Y%m%d')
+    </select>
+    
+    
+	<insert id="userJoin" parameterType="UserVo">
+    INSERT INTO USER (
+        UIDX, UNAME, UID, UPW, UBIRTH, UGENDER, UPHONE, UADDR1, UADDR2, UMAIL, 
+        USTATUS, UPOST, UINSERTDATE, UUPDATEDATE, UDELETEDATE, UPROFILE, USAVEPROFILE
+    )
+    VALUES (
+        #{uidx}, #{uname}, #{uid}, #{upw}, #{ubirth}, #{ugender}, #{uphone}, #{uaddr1}, #{uaddr2}, #{umail},
+        'N', #{upost}, NOW(), NOW(), NULL, NULL,NULL
+    )
+</insert>
+
+    
+</mapper>

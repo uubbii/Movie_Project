@@ -1,0 +1,15 @@
+package com.kmove.app.link;
+
+import java.util.List;
+
+import com.kmove.app.user.vo.UserVo;
+
+public class LINKService {
+
+	public List<UserVo> uvo() {
+		// TODO Auto-generated method stub
+		List<UserVo> uvo = 
+		return uvo;
+	}
+
+}

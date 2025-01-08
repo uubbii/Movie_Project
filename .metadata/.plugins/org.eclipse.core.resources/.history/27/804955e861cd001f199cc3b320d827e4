@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>main</title>
+<style>
+	header{
+		background-color: #fff;
+		box-shadow: 0 1px #00000014;
+	}
+	section{
+		
+	}
+</style>
+</head> 
+<body>
+	<header class="" style="position:fixed; top: 0px;">
+		<section>
+			<ul>
+				<li class="logo">
+					<a>왓챠피디아(로고)</a>
+				</li>
+				<li class="board">
+					<a>왓챠피디아(로고)</a>
+				</li>
+				<li class="search">
+					<a>왓챠피디아(로고)</a>
+				</li>
+				<li class="login">
+					<a>왓챠피디아(로고)</a>
+				</li>
+				<li class="profile">
+					<a>왓챠피디아(로고)</a>
+				</li>
+			</ul>
+		</section>
+	</header>
+</body>
+</html>

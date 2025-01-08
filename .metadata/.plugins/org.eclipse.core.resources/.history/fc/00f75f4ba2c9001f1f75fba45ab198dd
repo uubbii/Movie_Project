@@ -1,0 +1,5 @@
+package com.kmove.app.user.dao;
+
+public class UserDaoIml {
+
+}

@@ -1,0 +1,9 @@
+package com.kmove.app.user.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserServiceIml implements UserService {
+
+	
+}

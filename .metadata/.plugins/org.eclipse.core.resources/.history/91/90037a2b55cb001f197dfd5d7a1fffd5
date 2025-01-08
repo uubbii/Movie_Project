@@ -1,0 +1,9 @@
+package com.kmove.app.user.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class UserDaoIml implements UserDao {
+	private String namespace = "com.kmove.app.UserMapper";
+}

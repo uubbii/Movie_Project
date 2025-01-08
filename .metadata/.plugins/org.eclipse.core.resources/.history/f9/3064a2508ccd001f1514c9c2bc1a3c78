@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+		
+<configuration>
+	<typeAliases>
+	
+			<typeAlias type="com.kmove.app.user.vo.UserVo" alias="UserVo"/>
+		<!-- <typeAlias type="com.kmove.app.user.vo.UserVO" alias="UserVO"/>
+		<typeAlias type="com.kmove.app.comm.PageHandler" alias="PageHandler"/>
+		<typeAlias type="com.kmove.app.user.vo.SearchCondition" alias="SearchCondition"/>
+		<typeAlias type="com.kmove.app.board.vo.BoardVO" alias="BoardVO"/>
+		<typeAlias type="com.kmove.app.comment.vo.CommentVO" alias="CommentVO"/> -->
+	</typeAliases>
+</configuration>
+

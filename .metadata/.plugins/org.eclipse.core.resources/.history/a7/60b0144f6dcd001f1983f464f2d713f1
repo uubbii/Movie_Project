@@ -1,0 +1,5 @@
+package com.kmove.app.email;
+
+public class EmailContoroller {
+
+}

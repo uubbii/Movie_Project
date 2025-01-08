@@ -1,0 +1,14 @@
+package com.kmove.app.user.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.kmove.app.user.service.UserService;
+
+@Controller
+public class UserController {
+
+	
+	@Autowired UserService userservice;
+	
+}

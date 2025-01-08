@@ -1,0 +1,27 @@
+package com.kmove.app.user.vo;
+
+import java.util.Date;
+
+//유저가
+public class UserVo {
+
+	 	private String uidx ;
+		//Chaebun을 활용한 Primary Key
+	 	
+	 	private String uname; // 유저 이름 
+	 	private String uid; // 유저 ID
+	 	private String upw; //유저 Password
+	 	private Date ubirth; // 유저 생일 
+	 	private boolean ugender; // 유저 성별 (Y-남/N-녀)
+	 	private String uphone; // 유저의 전화번호 (010-****-****)	 	
+	 	private String uaddr2; // 직접입력(유저가 입력받음)
+	 	private String umail; // 항상 [**@*.*] 형태로 입력받음. 
+	 	private String uinsertdate;
+	 	private String uupdatedate;
+	 	private String udeletedate;	 
+	 	
+	 	
+	 	private String udeleteyn; // 기본값 N, 무시해도 자동으로 N
+	 	private String upost; // 카카오맵 API(유저가 입력받지 않음)
+	 	private String uaddr1; // 카카오맵 API(유저가 입력받지 않음)
+}

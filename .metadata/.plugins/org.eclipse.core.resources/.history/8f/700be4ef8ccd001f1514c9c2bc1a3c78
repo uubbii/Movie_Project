@@ -1,0 +1,20 @@
+package com.kmove.app.link;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.kmove.app.user.vo.UserVo;
+
+	@Autowired LINKDao linkdao;
+
+public class LINKService {
+
+	public List<UserVo> uvo() {
+		// TODO Auto-generated method stub
+		System.out.print("Servcie OK . . .");
+		List<UserVo> ulist = l
+		return uvo;
+	}
+
+}

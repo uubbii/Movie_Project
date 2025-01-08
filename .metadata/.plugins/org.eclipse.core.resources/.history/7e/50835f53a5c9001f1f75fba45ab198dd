@@ -1,0 +1,23 @@
+package com.kmove.app.user.vo;
+
+import java.util.Date;
+
+//유저가
+public class UserVo {
+	
+	 	private String uidx ;      // 이름	 	
+	 	private String uname;
+	 	private String uid;
+//	 	UPW
+//	 	UBIR
+//	 	UPH
+//	 	UPO
+//	 	UADDR1
+//	 	UADDR2
+//	 	UMAIL
+//	 	UDELETEYN
+//	 	UPROFRONT
+//	 	UPROEND
+//	 	UUPDATEDATE
+//	 	UDELETEDATE
+}

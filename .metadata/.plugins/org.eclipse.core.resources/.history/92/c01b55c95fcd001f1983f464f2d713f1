@@ -1,0 +1,11 @@
+package com.kmove.app.user.service;
+
+import java.util.List;
+
+import com.kmove.app.user.vo.UserVo;
+
+public interface UserService {
+
+	public List<UserVo> uvo() throws Exception;
+	
+}

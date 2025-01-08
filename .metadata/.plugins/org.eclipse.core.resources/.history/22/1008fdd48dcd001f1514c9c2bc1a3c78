@@ -1,0 +1,5 @@
+package com.kmove.app.link;
+
+public interface LINKService {
+
+}

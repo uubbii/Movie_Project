@@ -1,0 +1,7 @@
+package com.kmove.app.user.dao;
+
+public interface UserDao {
+	public List<UserVo> uvo() throws Exception;
+	
+	
+}

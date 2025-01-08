@@ -1,0 +1,5 @@
+package com.kmove.app.user.controller;
+
+public class UserController {
+
+}

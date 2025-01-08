@@ -1,0 +1,11 @@
+package com.kmove.app.link;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class LINKDao {
+
+	
+	
+	
+}
