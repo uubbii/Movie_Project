@@ -48,7 +48,7 @@ section {
 a {
 	height: 100%;
 	/* padding: 0 16px; */
-	display : flex;
+	/* display : flex; */
 	align-items: center;
 }
 .user_img{
@@ -170,9 +170,9 @@ input {
     background: #ffff;
     border-radius: 5px;
     top: 60%; 
-    left: 40%; 
-    transform: translate(-50%, -50%); /* 정확히 가운데 정렬 */
-    width: fit-content;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 500px;
     height: fit-content;
     padding: 50px;
 }
@@ -266,7 +266,7 @@ input {
 	margin: 5px 0 5px 30px;
 }
 .review_mn{
-	margin: 3px 0 30px 0;
+	margin: 3px 0 20px 0;
 	font-size: 20px;
 	font-weight: 400;
 	letter-spacing: 0;
@@ -277,7 +277,7 @@ input {
 	display:flex;
 }
 .review_title{
-	
+	font-size: 15px;
 }
 .review_up{
 	flex-shrink: 0;
@@ -317,6 +317,7 @@ input {
 	white-space: pre-wrap;
 	transition: opacity .4s;
 	overflow: hidden;
+	margin-left: 5px;
 }
 .review_bottom{
 	justify-content: space-between;
