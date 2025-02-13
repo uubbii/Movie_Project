@@ -74,7 +74,7 @@ public class RestController {
 	    }
 
 	    // 리뷰 업데이트 관련 처리
-	    List<ReviewVo> updatedReview = reviewservice.Select_Review(session, movieId);
+	    List<ReviewVo> updatedReview = reviewservice.Select_Reviews(session, movieId);
 
 	    // updatedReview가 null이 아니고 비어있지 않으면
 	    if (updatedReview != null && !updatedReview.isEmpty()) {

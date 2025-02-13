@@ -72,7 +72,11 @@ a {
     gap: 10px;	
 }
 /* 
-li {
+
+
+
+
+
 	position: relative;
 	height: 62px;
 	unicode-bidi: isolate;
@@ -171,7 +175,7 @@ input {
     top: 60%; 
     left: 40%; 
     transform: translate(-50%, -50%); /* 정확히 가운데 정렬 */
-    width: fit-content;
+    width: 500px;
     height: fit-content;
     padding: 50px;
 }

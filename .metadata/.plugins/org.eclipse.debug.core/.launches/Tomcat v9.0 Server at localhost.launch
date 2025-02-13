@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jst.server.tomcat.core.launchConfigurationType">
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="API_KEY" value="Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTRmNDQyMjk0ZWVkYWRlNzg0Y2YzYmMxYmY4MTg0NSIsIm5iZiI6MTczNTM4MjgzMy42NTY5OTk4LCJzdWIiOiI2NzZmZDczMTJjOTA5N2IyNjY2MTgxODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KeXKIxREdOF3yahLShScp-dLpJ5HHrx932boLbQriS0"/>
+    </mapAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
     <listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
         <listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry containerPath=&quot;org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-11&quot; path=&quot;2&quot; type=&quot;4&quot;/&gt;&#13;&#10;"/>
         <listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;C:/apache-tomcat-9.0.93/bin/bootstrap.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#13;&#10;"/>

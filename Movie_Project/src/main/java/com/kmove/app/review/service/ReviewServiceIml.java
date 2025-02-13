@@ -45,13 +45,13 @@ public class ReviewServiceIml implements ReviewService {
 
 
 	@Override
-	public List<ReviewVo> Select_Review( HttpSession session,int mid) throws Exception {
+	public List<ReviewVo> Select_Reviews( HttpSession session,int mid) throws Exception {
 
 		BlockUserVo buvo = new BlockUserVo();				
 		buvo.setUidx(session.getAttribute("uidx") != null ? session.getAttribute("uidx").toString() : "");		
 		buvo.setMid(mid);		
 		
-		List<ReviewVo> lrv =  reviewdao.Select_Review(buvo);
+		List<ReviewVo> lrv =  reviewdao.Select_Reviews(buvo);
 		 
 		return lrv;
 	}

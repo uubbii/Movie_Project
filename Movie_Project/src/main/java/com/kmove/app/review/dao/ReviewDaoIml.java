@@ -32,7 +32,7 @@ public class ReviewDaoIml implements ReviewDao{
         return res;		
 	}
 	@Override
-	public List<ReviewVo> Select_Review(BlockUserVo buvo) throws Exception {
+	public List<ReviewVo> Select_Reviews(BlockUserVo buvo) throws Exception {
 		List<ReviewVo> lvo = session.selectList(namespace + "selectreviews", buvo);
 		return lvo;
 	}

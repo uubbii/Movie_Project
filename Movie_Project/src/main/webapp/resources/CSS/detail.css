@@ -178,10 +178,10 @@ input {
     z-index: 21;
     background: #ffff;
     border-radius: 5px;
-    top: 60%; /* 화면 세로 중앙 */
-    left: 30%; /* 화면 가로 중앙 */
+    top: 60%; 
+    left: 40%; 
     transform: translate(-50%, -50%); /* 정확히 가운데 정렬 */
-    width: fit-content;
+    width: 500px;
     height: fit-content;
     padding: 50px;
 }

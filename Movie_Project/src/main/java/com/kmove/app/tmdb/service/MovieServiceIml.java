@@ -20,7 +20,8 @@ import com.kmove.app.tmdb.vo.MovieResponseVo.MovieVo.ActorVo;
 
 @Service
 public class MovieServiceIml implements MovieService{
-
+	
+	private String APIKEY = System.getenv("API_KEY");
 	
     // MovieServiceIml 내부에서 공용사용
     private final HttpClient client = HttpClient.newHttpClient();
@@ -31,14 +32,14 @@ public class MovieServiceIml implements MovieService{
     
     @Override
     public List<MovieResponseVo> Request_Movies(String time_window)throws Exception {
-	
+	    	
     	MovieComm.genreCache = MovieComm.Request_Genre();
     	
     	
 	    HttpRequest request = HttpRequest.newBuilder()
 	    	    .uri(URI.create("https://api.themoviedb.org/3/trending/movie/"+time_window+"?language=ko-KR"))
 	    	    .header("accept", "application/json")
-	    	    .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTRmNDQyMjk0ZWVkYWRlNzg0Y2YzYmMxYmY4MTg0NSIsIm5iZiI6MTczNTM4MjgzMy42NTY5OTk4LCJzdWIiOiI2NzZmZDczMTJjOTA5N2IyNjY2MTgxODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KeXKIxREdOF3yahLShScp-dLpJ5HHrx932boLbQriS0")
+	    	    .header("Authorization", APIKEY)
 	    	    .method("GET", HttpRequest.BodyPublishers.noBody())
 	    	    .build();
         // API 호출
@@ -108,7 +109,7 @@ public class MovieServiceIml implements MovieService{
 		HttpRequest request = HttpRequest.newBuilder()
 			    .uri(URI.create("https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1&region=KR"))
 			    .header("accept", "application/json")
-			    .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTRmNDQyMjk0ZWVkYWRlNzg0Y2YzYmMxYmY4MTg0NSIsIm5iZiI6MTczNTM4MjgzMy42NTY5OTk4LCJzdWIiOiI2NzZmZDczMTJjOTA5N2IyNjY2MTgxODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KeXKIxREdOF3yahLShScp-dLpJ5HHrx932boLbQriS0")
+			    .header("Authorization", APIKEY)
 			    .method("GET", HttpRequest.BodyPublishers.noBody())
 			    .build();
 			HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
@@ -179,7 +180,7 @@ public class MovieServiceIml implements MovieService{
 	    			    "&language=ko-KR"))
 
 	        .header("accept", "application/json")
-	        .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTRmNDQyMjk0ZWVkYWRlNzg0Y2YzYmMxYmY4MTg0NSIsIm5iZiI6MTczNTM4MjgzMy42NTY5OTk4LCJzdWIiOiI2NzZmZDczMTJjOTA5N2IyNjY2MTgxODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KeXKIxREdOF3yahLShScp-dLpJ5HHrx932boLbQriS0")
+	        .header("Authorization", APIKEY)
 	        .method("GET", HttpRequest.BodyPublishers.noBody())
 	        .build();
 
@@ -275,7 +276,7 @@ public class MovieServiceIml implements MovieService{
 		HttpRequest request = HttpRequest.newBuilder()
 			    .uri(URI.create("https://api.themoviedb.org/3/search/movie?query="+word.replaceAll("\\s+", "")+"&include_adult=false&language=ko-KR&page=" + page))
 			    .header("accept", "application/json")
-			    .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTRmNDQyMjk0ZWVkYWRlNzg0Y2YzYmMxYmY4MTg0NSIsIm5iZiI6MTczNTM4MjgzMy42NTY5OTk4LCJzdWIiOiI2NzZmZDczMTJjOTA5N2IyNjY2MTgxODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KeXKIxREdOF3yahLShScp-dLpJ5HHrx932boLbQriS0")
+			    .header("Authorization", APIKEY)
 			    .method("GET", HttpRequest.BodyPublishers.noBody())
 			    .build();
 			HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
@@ -345,7 +346,7 @@ public class MovieServiceIml implements MovieService{
 		HttpRequest request = HttpRequest.newBuilder()
 			    .uri(URI.create("https://api.themoviedb.org/3/search/person?query="+word.replaceAll("\\s+", "")+"&include_adult=false&language=ko-KR&page=1"))
 			    .header("accept", "application/json")
-			    .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTRmNDQyMjk0ZWVkYWRlNzg0Y2YzYmMxYmY4MTg0NSIsIm5iZiI6MTczNTM4MjgzMy42NTY5OTk4LCJzdWIiOiI2NzZmZDczMTJjOTA5N2IyNjY2MTgxODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KeXKIxREdOF3yahLShScp-dLpJ5HHrx932boLbQriS0")
+			    .header("Authorization", APIKEY)
 			    .method("GET", HttpRequest.BodyPublishers.noBody())
 			    .build();
 			HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
@@ -386,7 +387,7 @@ public class MovieServiceIml implements MovieService{
 		HttpRequest request = HttpRequest.newBuilder()
 			    .uri(URI.create("https://api.themoviedb.org/3/person/"+id+"?append_to_response=%2Cmovie_credits&language=ko-KR"))
 			    .header("accept", "application/json")
-			    .header("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTRmNDQyMjk0ZWVkYWRlNzg0Y2YzYmMxYmY4MTg0NSIsIm5iZiI6MTczNTM4MjgzMy42NTY5OTk4LCJzdWIiOiI2NzZmZDczMTJjOTA5N2IyNjY2MTgxODYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KeXKIxREdOF3yahLShScp-dLpJ5HHrx932boLbQriS0")
+			    .header("Authorization", APIKEY)
 			    .method("GET", HttpRequest.BodyPublishers.noBody())
 			    .build();
 			HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());

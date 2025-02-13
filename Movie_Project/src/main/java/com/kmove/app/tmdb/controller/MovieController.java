@@ -78,7 +78,7 @@ public class MovieController {
 	 System.out.println("확인된 영화 ID: " + movieId + " 상세 정보 요청 중...");
 	 
 	 MovieVo movie = movieservice.Request_Detail(movieId);
-     List<ReviewVo> reviews = reviewService.Select_Review(session, movieId);
+     List<ReviewVo> reviews = reviewService.Select_Reviews(session, movieId);
       
 	 
         if (movie == null) {	            

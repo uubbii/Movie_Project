@@ -44,7 +44,6 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="org.springframework.mail.javamail.MimeMessageHelper"/>
     <fullyQualifiedTypeName name="javax.mail.internet.MimeMessage"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
 </qualifiedTypeNameHistroy>

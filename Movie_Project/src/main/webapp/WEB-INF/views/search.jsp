@@ -254,7 +254,14 @@ a{
                   <div class="movie_item">
                      <div class="movie_content">
                         <a href="<c:url value='/detail?id=${movie.id}'/>" class="movie_blank">
-                           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+							<c:choose>
+							    <c:when test="${not empty movie.poster_path and movie.poster_path ne 'https://image.tmdb.org/t/p/w500null'}">
+							        <img src="${movie.poster_path}" alt="${movie.title}" />
+							    </c:when>
+							    <c:otherwise>
+							    <img src="${pageContext.request.contextPath}/resources/IMG/default2.jpg" alt="포스터의 사진이 제공되지 않는 작품입니다." />
+							    </c:otherwise>
+							</c:choose>
                         </a>
                         <div class="movie_info">
                         <div class="movie_title">${movie.title }</div>

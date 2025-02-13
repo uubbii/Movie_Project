@@ -26,7 +26,7 @@ public interface ReviewService {
      * @param mid 조회할 영화의 ID.
      * @return 차단한 유저를 제외한 유저들의 리뷰 반환.
      */
-    public List<ReviewVo> Select_Review( HttpSession session,int mid) throws Exception;
+    public List<ReviewVo> Select_Reviews( HttpSession session,int mid) throws Exception;
     
     
     

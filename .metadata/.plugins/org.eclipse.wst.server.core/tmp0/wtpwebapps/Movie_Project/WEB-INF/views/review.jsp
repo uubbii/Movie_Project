@@ -88,19 +88,12 @@ textarea {
 }
 
 #blockButton{
-    background: #ff4d4d;
-    color: white;
+    background: white;
+    color: black;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    margin : 0 0 0 3px;
 }
-
-button:hover {
-    background: #e60000;
-}
-
 
 </style>
 </head>
@@ -208,7 +201,7 @@ button:hover {
         					<div class="review_un">${rvo.uidx}</div>
         					<div class="review_date">${rvo.rinsertdate}</div>                    
 							<c:if test="${not empty sessionScope.usaveprofile}">            
-			    				<button id="blockButton" onclick="openModal()">차단하기</button>
+			    				<button id="blockButton" onclick="openModal()"><span class="material-symbols-outlined">person_off</span></button>
 							</c:if>
     					</div>
 					</div>
@@ -225,11 +218,11 @@ button:hover {
             					</div>
             					<input type="hidden" name="ridx" value="${rvo.ridx}">
             					<input type="hidden" name = mid value = "${mid }">
-            					<button type="submit">차단하기</button>
+            					<button type="submit"><span class="material-symbols-outlined">person_off</span></button>
         					</form>
     					</div>
 					</div>
-
+				</div>
 <script>
 //모달 열기
 function openModal() {
@@ -252,8 +245,6 @@ function validateForm() {
 }
 
 </script>
-				
-				
 				<div class="review_mid">
 					<div class="review_content">
 						<div class="review_uc">${rvo.rcontent} </div>
@@ -302,8 +293,10 @@ function validateForm() {
     						<input type="hidden" name="ridx" value="${ridx}" class="comment-hidden">
     
    					 		<input type="hidden" name="uidx" value="${uidx}" class="comment-hidden">
-
-    						<button type="submit" class="comment-submit-button">댓글 작성</button>
+							
+							<div>
+    							<button type="submit" class="comment-submit-button">댓글 작성</button>
+    						</div>
 						</form>
 					</div>
 					<!-- <button type="submit" class="comment-submit-button">댓글 작성</button> -->

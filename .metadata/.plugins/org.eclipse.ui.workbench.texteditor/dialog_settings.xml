@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="login"/>
+		<item key="selection" value="modal"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="login"/>
-			<item value="list"/>
-			<item value="li"/>
-			<item value="lo"/>
-			<item value="default"/>
-			<item value="update"/>
-			<item value="helper.setTo(to);"/>
-			<item value=".review"/>
-			<item value="onclick=&quot;closeModal()&quot;&gt;&amp;times;&lt;/span&gt;"/>
-			<item value="close"/>
-			<item value="openModal() "/>
-			<item value="blockModal"/>
-			<item value="userinfo"/>
-			<item value="usaveprofile"/>
-			<item value="기본 프로필 사진"/>
+			<item value="modal"/>
+			<item value="movie_blank"/>
+			<item value="null"/>
+			<item value="img"/>
+			<item value="modal login"/>
+			<item value="be"/>
+			<item value="api"/>
+			<item value="menu"/>
+			<item value="modal .box"/>
+			<item value="modal. box"/>
+			<item value="modal.box"/>
+			<item value="modal.vox"/>
+			<item value="modal."/>
+			<item value="model"/>
+			<item value="m"/>
 		</list>
 		<list key="replacehistory">
 			<item value="jspsaveprofile"/>
@@ -30,8 +30,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="767"/>
-		<item key="DIALOG_Y_ORIGIN" value="582"/>
+		<item key="DIALOG_X_ORIGIN" value="1590"/>
+		<item key="DIALOG_Y_ORIGIN" value="678"/>
 		<item key="DIALOG_WIDTH" value="339"/>
 		<item key="DIALOG_HEIGHT" value="351"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

@@ -25,7 +25,7 @@ public interface ReviewDao {
      */
     public int commitreview(ReviewVo rvo) throws Exception;
     
-    public List<ReviewVo> Select_Review(BlockUserVo buvo) throws Exception;
+    public List<ReviewVo> Select_Reviews(BlockUserVo buvo) throws Exception;
     
     public List<ReviewVo> Select_Recent_Review(BlockUserVo buvo) throws Exception;
 
