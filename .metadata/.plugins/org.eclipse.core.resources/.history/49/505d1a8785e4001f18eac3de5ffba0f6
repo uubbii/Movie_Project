@@ -1,0 +1,15 @@
+function blockUser() {
+    fetch(`Block?target=${uidx}`, {
+        method: "POST",
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("사용자를 차단했습니다.");
+            // 차단 후 글과 댓글 갱신 (예시)
+            updatePostsAndComments();
+        } else {
+            alert("차단에 실패했습니다.");
+        }
+    })
+    .catch(error => console.error("에러:", error));
+}

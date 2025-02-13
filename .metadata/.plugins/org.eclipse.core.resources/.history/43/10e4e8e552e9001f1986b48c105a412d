@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.kmove.app.mapper.ReviewMapper">
+
+    
+    <select id="maxno" resultType="java.lang.Integer">
+        SELECT
+            IFNULL(MAX(SUBSTR(RIDX, 10, 3)), 0) + 1
+        FROM REVIEW
+        WHERE SUBSTR(RIDX, 2, 8) = DATE_FORMAT(NOW(), '%Y%m%d')
+    </select>
+    
+<insert id="commitreview" parameterType="ReviewVo">
+    INSERT INTO review ( 
+        RIDX, UIDX, MID, RTITLE, RCONTENT, 
+        RINSERTDATE, RUPDATEDATE, RGOOD, RREPORT, RVIEW
+    ) VALUES (
+        #{ridx}, #{uidx}, #{mid}, #{rtitle}, #{rcontent}, 
+        NOW(), NOW(), 0, 0, 0
+    )
+</insert>
+
+
+<!-- 
+    REVIEW 테이블과 Movie_Project.user 테이블을 JOIN하고,    
+    BLOCKED 테이블에서 현재 유저(uidx)가 차단한 대상(target_uidx)과 
+    현재 유저를 차단한 리뷰자들(target_uidx)을 제외하고, 
+    차단되지 않은 리뷰만 SELECT합니다.
+-->
+<select id="selectreviews" parameterType="BlockUserVo" resultType="ReviewVo">
+		SELECT 
+		      r.RIDX, 
+		      u.uname AS UIDX, 
+		      r.MID, 
+		      r.RTITLE, 
+		      r.RCONTENT, 
+		      r.RINSERTDATE, 
+		      r.RUPDATEDATE, 
+		      r.RGOOD, 
+		      r.RREPORT, 
+		      r.RVIEW,
+		      u.USAVEPROFILE
+		  FROM 
+		      REVIEW r
+		  JOIN 
+		      Movie_Project.user u ON r.UIDX = u.UIDX
+		  LEFT JOIN BLOCKED b1 ON r.UIDX = b1.TARGET_UIDX AND b1.uidx = #{uidx}
+		  LEFT JOIN BLOCKED b2 ON r.UIDX = b2.uidx AND b2.target_uidx = #{uidx}
+		  WHERE 
+		      r.MID = #{mid}                                  
+		      AND r.RREPORT &lt; 5                
+		      AND b1.BIDX IS NULL AND b2.BIDX IS NULL
+		  ORDER BY 
+		      r.RGOOD DESC;     
+
+</select>
+<select id="selectrecentreview" parameterType="BlockUserVo" resultType="ReviewVo">
+    SELECT 
+          r.RIDX, 
+          u.uname AS UIDX, 
+          r.MID, 
+          r.RTITLE, 
+          r.RCONTENT, 
+          r.RINSERTDATE, 
+          r.RUPDATEDATE, 
+          r.RGOOD, 
+          r.RREPORT, 
+          r.RVIEW
+    FROM 
+          REVIEW r
+    JOIN 
+          Movie_Project.user u ON r.UIDX = u.UIDX
+    <if test="uidx != null and uidx != ''">
+        LEFT JOIN BLOCKED b1 ON r.UIDX = b1.TARGET_UIDX AND b1.uidx = #{uidx}
+        LEFT JOIN BLOCKED b2 ON r.UIDX = b2.uidx AND b2.target_uidx = #{uidx}
+        WHERE 
+            b1.BIDX IS NULL AND b2.BIDX IS NULL
+    </if>
+    ORDER BY 
+        r.RINSERTDATE DESC
+    LIMIT 5;
+</select>
+
+<select id="selectreview" parameterType="String" resultType="ReviewVo">
+    SELECT
+        r.RIDX,
+        r.RTITLE,
+        r.RCONTENT,
+        u.uname As uidx,
+        r.RINSERTDATE,
+        r.RUPDATEDATE,
+        r.RGOOD,
+        r.RREPORT,
+        r.RVIEW,
+        u.USAVEPROFILE
+    FROM
+        REVIEW r
+    JOIN
+        USER u ON r.UIDX = u.UIDX 
+    WHERE
+        r.RIDX = #{ridx}
+</select>
+
+
+
+    </mapper>

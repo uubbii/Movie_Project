@@ -1,0 +1,477 @@
+/* 공통 스타일 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더와 네비게이션 */
+header {
+    background-color: #fff;
+    box-shadow: 0 1px #00000014;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    width: 100%;
+    
+}
+
+section {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a {
+	height: 100%;
+	/* padding: 0 16px; */
+	display : flex;
+	align-items: center;
+}
+.user_img{
+	width: 50px; 
+	height: 50px; 
+	border-radius: 50%;
+}
+
+.modal_a{
+	height: 40px;
+	/* padding: 0 16px; */
+	display: flex;
+	align-items: center;
+	
+}
+.menu_bar{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;	
+    
+}
+/* 
+li {
+	position: relative;
+	height: 62px;
+	unicode-bidi: isolate;
+	display: flex;
+	align-items: center;
+} */
+.board{
+	margin-left: 15px;
+	align-items: center;
+	position: relative;
+	height: 62px;
+	unicode-bidi: isolate;
+	display: flex;
+	color:black;
+}
+.search {
+    margin-left: auto;
+    align-items: center; 
+    position: relative;
+	height: 62px;
+	unicode-bidi: isolate;
+	display: flex;
+}
+.userimg{
+	width: 50px; 
+	height: 50px; 
+	border-radius: 50%;
+	align-items: center;
+	position: relative;
+	unicode-bidi: isolate;
+	display: flex;
+}
+
+input {
+    width: 250px;
+    height: 32px;
+    font-size: 15px;
+    border: none;
+    border-radius: 15px;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    outline: none;
+}
+
+.loginbtn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 0;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.menubtn{
+    background: transparent;
+    border: 0;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 5px 5px 5px;
+    padding: 10px;
+}
+
+.loginbtn:hover {
+    color: white;
+    background: #F216A5;
+}
+.menubtn:hover {
+    color: white;
+    background: #F216A5;
+}
+
+.logoimg {
+    width: 150px;
+    height: 50px;
+}
+
+/* 모달 스타일 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: none;
+}
+.modal .box {
+    position: fixed;
+    z-index: 21;
+    background: #ffff;
+    border-radius: 5px;
+    top: 60%; 
+    left: 40%; 
+    transform: translate(-50%, -50%); /* 정확히 가운데 정렬 */
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+}
+
+.modal.is-show {
+    display: block;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(113, 113, 113, 0.26);
+}
+
+.box {
+    position: absolute;
+    z-index: 21;
+    background: #fff;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+}
+
+.box h5 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.box input {
+    display: block;
+    margin: 20px auto;
+    width: 55%;
+    padding: 10px;
+    font-size: 15px;
+}
+
+
+/* body layout */
+
+.review_box{
+	margin: 70px 105px 0 115px;	
+	
+}
+.review_container{
+	
+}
+.review_detail{
+	margin-bottom: 18px;
+	margin-top: 110px;
+}
+.review_mp{
+	align-items: center;
+	display:flex;
+}
+.review_mp_img{
+	border: .5px solid #00000029;
+    border-radius: 3px;
+    width: 72px;
+    height: 106px;
+    position: relative;
+    overflow: hidden;
+    background: #f8f8f8;
+    transition: all .3s;
+}
+.review_poster{
+	vertical-align: top;
+    object-fit: cover;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 1px;
+    transition: opacity 420ms;
+}
+.review_top{
+	margin-bottom: 18px;
+	display: flex;
+	flex: none;
+}
+.review_name{
+	flex: 1;
+	overflow:hidden;
+	font-size: 12px;
+	margin: 5px 0 5px 30px;
+}
+.review_mn{
+	margin: 3px 0 30px 0;
+	font-size: 20px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 22px;
+}
+.review_user_info{
+	align-items:center;
+	display:flex;
+}
+.review_title{
+	
+}
+.review_up{
+	flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 3px 5px 3px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #00000014;
+    border-radius: 50%;
+
+}
+.review_un{
+	
+}
+.review_date{
+	
+}
+
+.review_mid{
+	margin-bottom: 22px;
+	position: relative;
+}
+.review_content{
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 23px;
+	color: #5e5e64;
+	postion: relative;
+}
+.review_uc{
+	opacity: 1;
+	white-space: pre-wrap;
+	transition: opacity .4s;
+	overflow: hidden;
+}
+.review_bottom{
+	justify-content: space-between;
+	align-items: center;
+	height: 40px;
+	margin-top: 32px;
+	display: flex;
+}
+.review_upre{
+	color: #5e5e64;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+}
+
+.review_upre > div{
+	margin: 0 5px 0 5px;
+}
+
+
+
+
+.review_comment{
+	margin-top: 55px;
+}
+.comment_containor{
+	margin-top: 35px;
+}
+.comment_ul{
+	flex-direction: column;
+	display:flex;
+}
+.comment_li{
+	border-top: 0;
+	width: 100%;
+	padding: 12px 0;
+}
+.comment_li_box{
+	display: flex;
+}
+.user_profile{
+	display: inherit;
+	align-items: inherit;
+}
+.user_profile > img{
+	border: 1px solid #fff;
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	object-fit: contain;
+}
+
+.comment_comment{
+	width: calc(100% - 5%);
+	margin-left: auto;
+}
+.user_name{
+	font-size: 13px;
+}
+.write_date{
+	color: #7e7e7e;
+	font-size: 12px;
+}
+.user_content{
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 23px;
+}
+
+
+
+.comment_input_box{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.comment_input_container{
+	text-align: center;
+}
+.comment_input{
+	margin: 15px 0 0 15px;
+}
+.comment-textarea{
+	width: 450px;
+	min-height:50px;
+	overflow-y: hidden;
+    resize: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+.comment-textarea:focus{
+	outline:none;
+
+}
+	
+.comment-submit-button{
+	
+	padding: 12px 192px;
+    border: 0;
+    color: white;
+    background: #F216A5;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+
+
+
+
+/* foot layout */
+
+.footlayout{
+	background-color:#1c1d1f;
+	/* text-align: center; */
+	margin-bottom: 0px;
+	/* align-items: center; */
+}
+.foot_bar{
+	align-items: center;
+	text-align: center;
+	height: 100px;
+	padding-top:20px;
+}
+.foot_main{
+	color: #a5a5a7;
+	margin-left: 115px;
+}
+.foot_ul{
+	font-size:13px;
+	line-height: 18px;
+}
+.foot_ulf{
+	margin-bottom: 12px;
+}
+.foot_li{
+
+}
+.foot_li::after{
+	vertical-align: top;
+    content: "";
+    background-color: #848485;
+    width: 1px;
+    height: 12px;
+    margin: 3px 8px 0;
+    display: inline-block;
+}
+.copyright{
+	margin-top: 10px;
+}
+.foot_logo{
+	width: 40px;
+	height: 15px;
+	filter: grayscale(100%);
+}

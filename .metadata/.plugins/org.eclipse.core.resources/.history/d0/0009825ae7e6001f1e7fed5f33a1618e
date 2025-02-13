@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.kmove.app.mapper.UserMapper">
+
+    <select id="uvo" resultType="UserVo">
+        SELECT
+            *
+        FROM user;        
+    </select>
+    
+    
+     <select id="maxno" resultType="java.lang.Integer">
+        SELECT
+            IFNULL(MAX(SUBSTR(UIDX, 10, 3)), 0) + 1
+        FROM USER
+        WHERE SUBSTR(UIDX, 2, 8) = DATE_FORMAT(NOW(), '%Y%m%d')
+    </select>
+    
+    <select id="Bmaxno" resultType="java.lang.Integer">
+        SELECT
+            IFNULL(MAX(SUBSTR(BIDX, 10, 3)), 0) + 1
+        FROM BLOCKED
+        WHERE SUBSTR(BIDX, 2, 8) = DATE_FORMAT(NOW(), '%Y%m%d')
+    </select>
+    
+    
+	<insert id="userjoin" parameterType="UserVo">
+    INSERT INTO USER (
+        UIDX, UNAME, UID, UPW, UBIRTH, UGENDER, UPHONE, UADDR1, UADDR2, UMAIL, 
+        USTATUS, UPOST, UINSERTDATE, UUPDATEDATE, UDELETEDATE, UPROFILE, USAVEPROFILE
+    )
+    VALUES (
+        #{uidx}, #{uname}, #{uid}, #{upw}, #{ubirth}, #{ugender}, #{uphone}, #{uaddr1}, #{uaddr2}, #{umail},
+        'N', #{upost}, NOW(), NOW(), NULL, #{uprofile},#{usaveprofile}
+    )
+</insert>
+
+<select id="isValidUser" parameterType="LoginVo" resultType="java.lang.Integer">
+    SELECT COUNT(*)
+    FROM USER
+    WHERE UID = #{uid} AND UPW = #{upw} AND USTATUS = 'N'
+</select>
+
+
+
+<select id="login" resultType="UserVo">
+   SELECT *
+	FROM USER
+	where UIDX = #{Key} AND USTATUS = 'N';
+
+</select>
+
+<select id="PrimaryKey" resultType="java.lang.String">
+    SELECT UIDX
+    FROM USER
+    WHERE UID = #{uid} AND UPW = #{upw} AND USTATUS = 'N'
+</select>
+
+
+<select id="selectBlocked" parameterType="java.lang.String" resultType="BlockUserVo">
+    SELECT 
+    	b.bidx AS bidx,        
+        u1.uname AS uidx,     
+        u2.uname AS targetUidx,      
+        b.breason,                     
+        b.BBLOCKEDDATE AS bblockedDate 
+    FROM 
+        user u1
+    JOIN 
+        blocked b ON u1.UIDX = b.UIDX
+    JOIN 
+        user u2 ON b.target_uidx = u2.UIDX
+    WHERE
+        b.uidx = #{uidx};
+
+
+</select>
+
+
+
+
+<update id="useruppw" parameterType="UserVO" >
+   UPDATE USER
+   SET UPW = #{upw} WHERE UID = #{uid}
+</update>
+
+
+<update id="userinfo" parameterType="UserVO">
+   UPDATE USER 
+   SET UPHONE = #{uphone },
+   UMAIL = #{umail},
+   UPOST = #{upost},
+   UADDR1 = #{uaddr1},
+   UADDR2 = #{uaddr2},
+   USAVEPROFILE = #{usaveprofile},
+   UPROFILE = #{uprofile} WHERE UID = #{uid}
+</update>
+
+
+<update id="userphoto" parameterType="java.lang.String">
+   UPDATE USER SET 
+   USAVEPROFILE = #{usaveprofile},
+    UPROFILE = #{uprofile} WHERE UID = #{uid}
+</update>
+    
+    
+    <!-- 이미 반응한 상태인지 확인하는 쿼리 -->
+<select id="isAlreadyReacted" resultType="int">
+    SELECT 
+        COUNT(*)
+    FROM
+        reaction
+    WHERE
+        uidx = #{uidx} 
+        AND ridx_cidx = #{targetridx}
+        AND rtype = 
+        <choose>
+            <when test="type == 1">'추천'</when>
+            <when test="type == 2">'신고'</when>
+        </choose>
+</select>
+
+<insert id="reactInsert" parameterType="java.util.Map">
+    INSERT INTO
+        reaction (uidx, ridx_cidx, rtype)
+    VALUES
+        (#{uidx}, #{targetridx}, 
+            <choose>
+                <when test="type == 1">'추천'</when>
+                <when test="type == 2">'신고'</when>
+            </choose>
+        )
+</insert>
+
+
+
+
+<update id="ReviewGood"  parameterType="java.util.Map">
+    UPDATE
+    	 Review
+    SET 
+    	RGOOD = RGOOD + 1
+    WHERE
+    	 RIDX = #{targetridx}
+</update>
+
+<update id="ReviewReport"  parameterType="java.util.Map">
+    UPDATE 
+    	Review
+    SET 
+    	RREPORT = RREPORT + 1
+    WHERE
+    	 RIDX = #{targetridx}
+</update>
+
+<select id="IsThisMe" resultType="BlockUserVo">
+    SELECT uidx
+    FROM review
+    WHERE ridx = #{targetUidx}
+    AND uidx != #{uidx}
+</select>
+
+
+
+<insert id="blockuser" parameterType="BlockUserVo">
+    INSERT INTO BLOCKED (BIDX, UIDX, TARGET_UIDX, BREASON, BBLOCKEDDATE)
+    VALUES (
+        #{bidx}, 
+        #{uidx}, 
+        (SELECT uidx 
+         FROM review 
+         WHERE ridx = #{targetUidx}), 
+        #{breason}, 
+        NOW()
+    )
+</insert>
+
+
+
+
+</mapper>
